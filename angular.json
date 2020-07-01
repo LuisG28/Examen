@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Examen170027"
+    }
+  },
+  "defaultProject": "Examen170027",
+  "cli": {
+    "analytics": false
+  }
 }

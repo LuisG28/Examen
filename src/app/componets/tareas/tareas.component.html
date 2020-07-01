@@ -1,0 +1,29 @@
+<div class="container" >
+    <form [formGroup]="tareasForm" (ngSubmit)="add(tareasForm.value)">
+        <div class="input-group">
+            <input type="text" formControlName="Tarea" class="form-control" placeholder="Descrpción de la tarea" required>
+            <div class="input-group-append">
+            <button class="btn btn-primary" type="submit" [disabled]="tareasForm.invalid">Guardar</button>
+            </div>
+            <br>
+            <div class="err"  *ngIf="tareasForm.get('Tarea').hasError('required') && tareasForm.get('Tarea').touched">
+                *Este campo es requerido, por favor introduzca la tarea
+            </div>
+        </div>
+    </form>
+    <br>
+    <button *ngIf="tareas.length>0" type="button" class="btn btn-danger" (click)="Eliminar()">Eliminar Tareas</button>
+</div>
+<br>
+
+
+<div *ngFor="let tareasn of tareas" class="container">
+<app-tareas-list [TareasList]="[tareasn]"></app-tareas-list>
+</div>
+
+<div class="container">
+    <p>Luis Gustavo Cruz Rosales</p>
+    <p>Desarrollo de Aplicaciónes web</p>
+    <p>ITIC Iván Eduardo García </p>
+</div>
+

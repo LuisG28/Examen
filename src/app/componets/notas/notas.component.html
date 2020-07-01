@@ -1,0 +1,49 @@
+<div class="container">
+    <form [formGroup]="NotasForm" (ngSubmit)="agrnotas(NotasForm.value)">
+        <div class="col-auto">
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Título</div>
+                </div>
+                <input type="text" formControlName="titulo" class="form-control" placeholder="Título de la nota">
+            </div>
+            <div class="err" *ngIf="NotasForm.get('titulo').hasError('required') && NotasForm.get('titulo').touched">
+                *Este campo es requerido, por favor introduzca el titulo de la tarea
+            </div>
+        </div>
+        <div class="col-auto">
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Descripción</div>
+                </div>
+                <textarea type="text" formControlName="desc" class="form-control"
+                    placeholder="Agregar descripción de la nota"> </textarea>
+            </div>
+            <div class="err" *ngIf="NotasForm.get('desc').hasError('required') && NotasForm.get('desc').touched">
+                *Este campo es requerido, por favor introduzca la descripción de la tarea
+            </div>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2" [disabled]="NotasForm.invalid">Guardar</button>
+        </div>
+    </form>
+    <br>
+</div>
+<div class="container ">
+    <div class="row">
+        <div class="bg-light  col-4" *ngFor="let item of notas">
+            <div class="card">
+                <div class="card-header fecha">{{fecha| date:"dd/MM/yy"}}</div>
+                <div class="card-body">
+                    <h5 class="card-title titulo">{{item.titulo}}</h5>
+                    <p class="card-text desc">{{item.desc}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <p>Luis Gustavo Cruz Rosales</p>
+    <p>Desarrollo de Aplicaciónes web</p>
+    <p>ITIC Iván Eduardo García </p>
+</div>

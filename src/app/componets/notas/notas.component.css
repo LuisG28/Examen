@@ -1,0 +1,19 @@
+.err{
+    color: red;
+}
+.titulo{
+    text-align: center;
+    color: #58AED9;
+}
+.desc{
+    text-align: justify;
+    color:#58AED9 ;
+}
+.fecha{
+    text-align: center;
+}
+
+.card{
+
+    margin:10px;
+}
