@@ -1,7 +1,7 @@
 <div class="container" >
     <form [formGroup]="tareasForm" (ngSubmit)="add(tareasForm.value)">
         <div class="input-group">
-            <input type="text" formControlName="Tarea" class="form-control" placeholder="Descrpción de la tarea" required>
+            <input type="text" formControlName="Tarea"  class="form-control" placeholder="Descrpción de la tarea" required>
             <div class="input-group-append">
             <button class="btn btn-primary" type="submit" [disabled]="tareasForm.invalid">Guardar</button>
             </div>
@@ -12,13 +12,19 @@
         </div>
     </form>
     <br>
-    <button *ngIf="tareas.length>0" type="button" class="btn btn-danger" (click)="Eliminar()">Eliminar Tareas</button>
+    <button *ngIf="ar.length>0" type="button" class="btn btn-danger" (click)="Eliminar()">Eliminar Tareas</button>
 </div>
 <br>
 
 
-<div *ngFor="let tareasn of tareas"  class="container">
-<app-tareas-list [TareasList]="[tareasn]"></app-tareas-list>
+<div *ngFor="let ar of ar; let i = index" [attr.data-index]="i"  class="container">
+<!--<app-tareas-list [TareasList]="[tareasn]"></app-tareas-list>-->
+    <div class="input-group-prepend  mb-2">
+    <div class="input-group-text">
+        <input type="checkbox" aria-label="Checkbox for following text input" [disabled]="ar.check"  (click)="desactivar(i)">
+    </div>
+    <input type="text" class="form-control ml-2" aria-label="Text input with checkbox" value="{{ar.Tarea}}" disabled  [ngClass]="ar.check==true ? 's' : ''"> 
+    </div>
 </div>
 
 

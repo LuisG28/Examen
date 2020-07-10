@@ -1,4 +1,4 @@
-<div class="input-group mb-3" *ngFor="let item of TareasList">
+<div class="input-group mb-3" *ngFor="let item of TareasList; let i = index" [attr.data-index]="i">
   <div class="input-group-prepend">
     <div class="input-group-text">
       <input type="checkbox" aria-label="Checkbox for following text input" [disabled]="isDisabled"  (click)="desactivar()">
