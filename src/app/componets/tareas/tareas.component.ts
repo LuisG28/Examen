@@ -7,16 +7,11 @@ import{FormGroup, FormBuilder, Validators} from '@angular/forms';
 })
 export class TareasComponent implements OnInit {
   tareas : Array<string>=[];
-  arr: Array<string>=[];
   isDisabled : boolean;
-  num: number;
-  bo:boolean=true;
   constructor(
     private _builder: FormBuilder
   ) { this.tareasForm = this._builder.group({
-    id:[],
-    Tarea:['', Validators.required],
-    check:[]
+    Tarea:['', Validators.required]
     })
     }
   tareasForm: FormGroup
@@ -30,7 +25,6 @@ export class TareasComponent implements OnInit {
     this.tareas.push(values);
     localStorage.setItem('arreglo', JSON.stringify(this.tareas));
     this.tareasForm.reset();
-    console.log(this.tareas);
     
   }
   Eliminar(){
@@ -43,7 +37,4 @@ export class TareasComponent implements OnInit {
   }
 
   
-  desactivar(){
-    this.isDisabled=true;
-  }
 }
