@@ -24,7 +24,9 @@
             </div>
         </div>
         <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-2" [disabled]="NotasForm.invalid">Guardar</button>
+            <button type="submit" class="btn btn-primary  " [disabled]="NotasForm.invalid">Guardar</button>
+            <br>
+            <button *ngIf="notas.length>0" type="button" class="btn btn-danger mt-2" (click)="borrar()">Eliminar Tareas</button>
         </div>
     </form>
     <br>

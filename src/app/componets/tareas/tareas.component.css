@@ -1,3 +1,6 @@
 .err{
     color: red;
 }
+.s{
+    text-decoration: line-through;
+}

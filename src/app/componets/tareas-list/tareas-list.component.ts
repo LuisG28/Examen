@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+
 @Component({
   selector: 'app-tareas-list',
   templateUrl: './tareas-list.component.html',
@@ -7,7 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TareasListComponent implements OnInit {
   @Input() TareasList : string;
-  constructor() { }
+  constructor() {
+  }
   isDisabled : boolean;
 
 
@@ -16,6 +18,5 @@ export class TareasListComponent implements OnInit {
   desactivar(){
     this.isDisabled=true;
   }
-  
-  
+
 }
